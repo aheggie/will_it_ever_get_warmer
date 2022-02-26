@@ -5,11 +5,27 @@
   padding: 0;
   box-sizing: border-box;
   font-family: inherit;
+  color: inherit;
+}
+
+:root {
+  /* background colors */
+  --splash-screen-blue-background: #0077b6;
+  --cold-blue-background: #0096c7;
+  --colder-blue-background: #00b4d8;
+  --warmer-yellow-background: #ff8500;
+
+  /* font colors */
+  --splash-screen-off-white-text: #fff8e8;
+  /* same font color for both states */
+  --cold-colder-off-white-text: #fffcf4;
+  --warmer-off-white-text: #fff1d0;
 }
 
 #root {
   font-family: "Lato", sans-serif;
-  background-color: antiquewhite;
+  background-color: var(--splash-screen-blue-background);
+  color: var(--splash-screen-off-white-text);
   display: flex;
   align-items: center;
   justify-content: center;
