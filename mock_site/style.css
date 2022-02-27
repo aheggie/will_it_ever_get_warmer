@@ -71,7 +71,9 @@
 /* this is so the heading moves up in the other page */
 /* maybe a more BEM approach is .mainheading--datareturned */
 .mainheading--datareturned {
-  margin-top: 150px;
+  /* this is the margin-top in figma but its not great on desktop somehow */
+  /* margin-top: 150px; */
+  margin-top: 112px;
   font-weight: 300;
   font-size: 42px;
 }
@@ -125,4 +127,61 @@
 .inputs__btn:active {
   background-color: var(--search-button-pressed);
   transform: scale(0.95);
+}
+
+/* this is a hacky fix to pull wild line-height under control */
+.oneword {
+  font-size: 336px;
+  margin-top: 32px;
+  /* display: inline-block; */
+  line-height: 212px;
+  margin-bottom: 24px;
+}
+
+.sentences {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 21px;
+}
+
+.sentences__sentence {
+  font-weight: 300;
+  font-size: 36px;
+}
+
+.weatherboxes {
+  margin-top: 45px;
+  display: flex;
+  align-items: center;
+  gap: 200px;
+}
+
+.weatherboxes__box {
+  width: 310px;
+  height: 248px;
+  /* need to make this variable */
+  border: 4px solid var(--cold-colder-off-white-text);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.weatherboxes__location {
+  margin-top: 16px;
+  font-size: 24px;
+}
+
+.weatherboxes__date {
+  margin-top: 9px;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.weatherboxes__temperature {
+  margin-top: -18px;
+  font-size: 164px;
 }
