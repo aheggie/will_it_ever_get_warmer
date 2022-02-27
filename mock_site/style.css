@@ -29,7 +29,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 100vh;
   min-width: 100vw;
   transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
@@ -48,4 +48,18 @@
 #root.root--warmer {
   background-color: var(--warmer-yellow-background);
   color: var(--warmer-off-white-text);
+}
+
+.mainheading {
+  margin-top: 189px;
+  letter-spacing: 0.8%;
+  font-weight: 400;
+  font-size: 84px;
+  transition: all 0.6s ease-in-out;
+}
+
+#root.root--datareturned .mainheading {
+  margin-top: 150px;
+  font-weight: 300;
+  font-size: 42px;
 }
