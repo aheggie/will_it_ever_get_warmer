@@ -8,8 +8,13 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div id="root" class="root--warmer">
-      <div class="test-element">Hello World</div>
+    <div id="root">
+      <h1 class="test-element">Hello World</h1>
     </div>
+    <script>
+      setTimeout(() => {
+        document.getElementById("root").classList.add("root--warmer");
+      }, 2000);
+    </script>
   </body>
 </html>
