@@ -16,12 +16,10 @@
         <button class="inputs__btn">Search</button>
       </div>
     </div>
-    <!-- <script>
-      setTimeout(() => {
-        document
-          .getElementById("root")
-          .classList.add("root--datareturned", "root--colder");
-      }, 2000);
-    </script> -->
+    <script>
+      document.querySelector(".inputs__btn").addEventListener("click", () => {
+        window.location = "./cold.html";
+      });
+    </script>
   </body>
 </html>

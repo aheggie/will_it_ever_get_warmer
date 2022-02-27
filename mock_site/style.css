@@ -70,7 +70,7 @@
 
 /* this is so the heading moves up in the other page */
 /* maybe a more BEM approach is .mainheading--datareturned */
-#root.root--datareturned .mainheading {
+.mainheading--datareturned {
   margin-top: 150px;
   font-weight: 300;
   font-size: 42px;
