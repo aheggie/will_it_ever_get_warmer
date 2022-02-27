@@ -7,6 +7,7 @@
   font-family: inherit;
   color: inherit;
   text-align: center;
+  letter-spacing: 0.008em;
 }
 
 :root {
@@ -20,7 +21,12 @@
   --splash-screen-off-white-text: #fff8e8;
   /* same font color for both states */
   --cold-colder-off-white-text: #fffcf4;
+  /* this is also used for the search button */
   --warmer-off-white-text: #fff1d0;
+
+  --search-button-hover: #fffcdb;
+
+  --search-button-pressed: #f6e8c7;
   /* this is just for the inputs, its based on cold-blue-background with 80% opacity */
   --splash-screen-inputs-blue-text: #0096c7cc;
 
@@ -57,7 +63,6 @@
 
 .mainheading {
   margin-top: 189px;
-  letter-spacing: 0.8%;
   font-weight: 400;
   font-size: 84px;
   /* transition: all 0.6s ease-in-out; */
@@ -83,6 +88,7 @@
   width: 200px;
   border: none;
   border-radius: var(--border-radius);
+  background-color: var(--splash-screen-off-white-text);
   color: var(--splash-screen-inputs-blue-text);
   font-weight: 300;
   font-size: 20px;
@@ -104,4 +110,14 @@
   color: var(--splash-screen-inputs-blue-text);
   font-weight: 300;
   font-size: 20px;
+}
+
+.inputs__btn:hover {
+  background-color: var(--search-button-hover);
+  transform: scale(1.05);
+}
+
+.inputs__btn:active {
+  background-color: var(--search-button-pressed);
+  transform: scale(0.95);
 }
