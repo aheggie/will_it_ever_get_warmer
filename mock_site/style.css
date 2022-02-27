@@ -21,6 +21,10 @@
   /* same font color for both states */
   --cold-colder-off-white-text: #fffcf4;
   --warmer-off-white-text: #fff1d0;
+  /* this is just for the inputs, its based on cold-blue-background with 80% opacity */
+  --splash-screen-inputs-blue-text: #0096c7cc;
+
+  --border-radius: 4px;
 }
 
 #root {
@@ -32,8 +36,8 @@
   align-items: center;
   justify-content: flex-start;
   min-height: 100vh;
-  min-width: 100vw;
-  transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
+  /* min-width: 100vw;
+  transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out; */
 }
 
 #root.root--cold {
@@ -56,11 +60,48 @@
   letter-spacing: 0.8%;
   font-weight: 400;
   font-size: 84px;
-  transition: all 0.6s ease-in-out;
+  /* transition: all 0.6s ease-in-out; */
 }
 
+/* this is so the heading moves up in the other page */
+/* maybe a more BEM approach is .mainheading--datareturned */
 #root.root--datareturned .mainheading {
   margin-top: 150px;
   font-weight: 300;
   font-size: 42px;
+}
+
+.inputs {
+  margin-top: 56px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.inputs__input {
+  height: 32px;
+  width: 200px;
+  border: none;
+  border-radius: var(--border-radius);
+  color: var(--splash-screen-inputs-blue-text);
+  font-weight: 300;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 6px;
+}
+
+.inputs__input::placeholder {
+  color: var(--splash-screen-inputs-blue-text);
+  opacity: 1;
+}
+
+.inputs__btn {
+  height: 32px;
+  width: 90px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--warmer-off-white-text);
+  color: var(--splash-screen-inputs-blue-text);
+  font-weight: 300;
+  font-size: 20px;
 }
