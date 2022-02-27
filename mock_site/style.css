@@ -27,10 +27,26 @@
   background-color: var(--splash-screen-blue-background);
   color: var(--splash-screen-off-white-text);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   min-width: 100vw;
+}
+
+#root.root--cold {
+  background-color: var(--cold-blue-background);
+  color: var(--cold-colder-off-white-text);
+}
+
+#root.root--colder {
+  background-color: var(--colder-blue-background);
+  color: var(--cold-colder-off-white-text);
+}
+
+#root.root--warmer {
+  background-color: var(--warmer-yellow-background);
+  color: var(--warmer-off-white-text);
 }
 
 .test-element {
