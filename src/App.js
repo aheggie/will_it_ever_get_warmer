@@ -13,13 +13,13 @@ const App = () => {
   return (
     <>
       <MainHeading isDataReturned={simpleMockData.dataReturned} />
-      <p class="instructions">
+      <p className="instructions">
         Enter your province and city to find out the temperature in seven days.
       </p>
-      <div class="inputs">
-        <input type="text" placeholder="Province" class="inputs__input" />
-        <input type="text" placeholder="City" class="inputs__input" />
-        <button class="inputs__btn" onClick={toggleMockDataReturned}>
+      <div className="inputs">
+        <input type="text" placeholder="Province" className="inputs__input" />
+        <input type="text" placeholder="City" className="inputs__input" />
+        <button className="inputs__btn" onClick={toggleMockDataReturned}>
           Search
         </button>
       </div>

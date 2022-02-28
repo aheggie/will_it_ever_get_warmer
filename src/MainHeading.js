@@ -1,6 +1,8 @@
 const MainHeading = ({ isDataReturned }) => (
   <h1
-    class={`mainheading ${isDataReturned ? "mainheading--datareturned" : ""}`}
+    className={`mainheading ${
+      isDataReturned ? "mainheading--datareturned" : ""
+    }`}
   >
     Will it ever get warmer?
   </h1>
