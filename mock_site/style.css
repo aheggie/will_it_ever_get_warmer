@@ -129,13 +129,12 @@
   transform: scale(0.95);
 }
 
-/* this is a hacky fix to pull wild line-height under control */
 .oneword {
   font-size: 336px;
-  margin-top: 32px;
-  /* display: inline-block; */
-  line-height: 212px;
-  margin-bottom: 24px;
+  /* the lineheight of such a large font adds alot of margin
+  these negative values are to manage that */
+  margin-top: -64px;
+  margin-bottom: -72px;
 }
 
 .sentences {
