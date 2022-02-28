@@ -41,6 +41,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  width: 100%;
   min-height: 100vh;
   min-width: 100vw;
 
@@ -189,4 +190,31 @@ maybe a more BEM approach is .mainheading--datareturned */
 .weatherboxes__temperature {
   margin-top: -18px;
   font-size: 164px;
+}
+
+/* smartphone */
+@media (max-width:500px) {
+  .mainheading {
+    margin-top: 128px;
+    font-size: 28px;
+  }
+
+  .instructions {
+    margin-top: 18px;
+    font-size: 18px;
+    padding: 0 20px;
+  }
+
+  .inputs {
+    margin-top: 24px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .inputs__input {
+    height: 24px;
+    width: 184px;
+  }
+
+  inputs
 }
