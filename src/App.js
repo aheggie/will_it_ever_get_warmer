@@ -1,5 +1,7 @@
 import { useState } from "react";
 import MainHeading from "./MainHeading";
+import ReturnView from "./ReturnView";
+import SplashElements from "./SplashElements";
 
 const App = () => {
   const [simpleMockData, setSimpleMockData] = useState({ dataReturned: false });
@@ -13,16 +15,11 @@ const App = () => {
   return (
     <>
       <MainHeading isDataReturned={simpleMockData.dataReturned} />
-      <p className="instructions">
-        Enter your province and city to find out the temperature in seven days.
-      </p>
-      <div className="inputs">
-        <input type="text" placeholder="Province" className="inputs__input" />
-        <input type="text" placeholder="City" className="inputs__input" />
-        <button className="inputs__btn" onClick={toggleMockDataReturned}>
-          Search
-        </button>
-      </div>
+      {simpleMockData.dataReturned ? (
+        <ReturnView toggleMockDataReturned={toggleMockDataReturned} />
+      ) : (
+        <SplashElements toggleMockDataReturned={toggleMockDataReturned} />
+      )}
     </>
   );
 };
