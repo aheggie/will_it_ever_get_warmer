@@ -258,7 +258,22 @@ maybe a more BEM approach is .mainheading--datareturned */
 
   .weatherboxes__box {
     border-width: 1px;
-    height: 112px;
+    height: 116px;
     width: 144px;
+  }
+
+  .weatherboxes__location {
+    margin-top: 6px;
+    font-size: 12px;
+  }
+
+  .weatherboxes__date {
+    margin-top: 4px;
+    font-size: 10px;
+  }
+
+  .weatherboxes__temperature {
+    margin-top: -12px;
+    font-size: 82px;
   }
 }
