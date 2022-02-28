@@ -44,8 +44,7 @@
   width: 100%;
   min-height: 100vh;
   min-width: 100vw;
-
-  /* transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out; */
+  transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
 }
 
 #root.root--cold {
@@ -63,23 +62,13 @@
   color: var(--warmer-off-white-text);
 }
 
+/* SPLASH PAGE */
+
 .mainheading {
   margin-top: 189px;
   font-weight: 400;
   font-size: 84px;
-
-  /* transition: all 0.6s ease-in-out; */
-}
-
-/* this is so the heading moves up in the other page
-maybe a more BEM approach is .mainheading--datareturned */
-.mainheading--datareturned {
-  /* this is the margin-top in figma but its not great on desktop somehow */
-
-  /* margin-top: 150px; */
-  margin-top: 112px;
-  font-weight: 300;
-  font-size: 42px;
+  transition: all 0.6s ease-in-out;
 }
 
 .instructions {
@@ -134,6 +123,18 @@ maybe a more BEM approach is .mainheading--datareturned */
   transform: scale(0.95);
 }
 
+/* RESPONSE PAGE */
+
+/* this is so the heading moves up in the other page */
+.mainheading--datareturned {
+  /* this is the margin-top in figma but its not great on desktop somehow */
+
+  /* margin-top: 150px; */
+  margin-top: 112px;
+  font-weight: 300;
+  font-size: 42px;
+}
+
 .oneword {
   font-size: 336px;
 
@@ -141,6 +142,9 @@ maybe a more BEM approach is .mainheading--datareturned */
   these negative values are to manage that */
   margin-top: -64px;
   margin-bottom: -72px;
+  
+  /* PLACEHOLDER FOR TRANSITION TWEAKING */
+  transition: all 0.6s ease-in-out;
 }
 
 .sentences {
@@ -149,6 +153,9 @@ maybe a more BEM approach is .mainheading--datareturned */
   flex-direction: column;
   align-items: center;
   gap: 21px;
+  
+  /* PLACEHOLDER FOR TRANSITION TWEAKING */
+  transition: all 0.6s ease-in-out;
 }
 
 .sentences__sentence {
@@ -161,6 +168,9 @@ maybe a more BEM approach is .mainheading--datareturned */
   display: flex;
   align-items: center;
   gap: 200px;
+  
+  /* PLACEHOLDER FOR TRANSITION TWEAKING */
+  transition: all 0.6s ease-in-out;
 }
 
 .weatherboxes__box {
