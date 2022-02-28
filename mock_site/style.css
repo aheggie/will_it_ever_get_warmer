@@ -194,6 +194,7 @@ maybe a more BEM approach is .mainheading--datareturned */
 
 /* smartphone */
 @media (max-width:500px) {
+  /* SPLASH PAGE */
   .mainheading {
     margin-top: 128px;
     font-size: 28px;
@@ -225,5 +226,39 @@ maybe a more BEM approach is .mainheading--datareturned */
     height: 32px;
     width: 90px;
     font-size: 18px;
+  }
+
+  /* RESPONSE PAGE */
+  .mainheading--datareturned {
+    margin-top: 92px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .oneword {
+    font-size: 188px;
+    margin-top: -32px;
+    margin-bottom: -17px;
+  }
+
+  .sentences {
+    margin-top: 0;
+    gap: 12px;
+    padding: 0 52px;
+  }
+
+  .sentences__sentence {
+    font-size: 18px;
+  }
+
+  .weatherboxes {
+    margin-top: 24px;
+    gap: 20px;
+  }
+
+  .weatherboxes__box {
+    border-width: 1px;
+    height: 112px;
+    width: 144px;
   }
 }
