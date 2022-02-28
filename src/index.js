@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 
-const test = "";
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
