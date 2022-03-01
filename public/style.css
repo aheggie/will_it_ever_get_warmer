@@ -142,10 +142,7 @@
   these negative values are to manage that */
   margin-top: -64px;
   margin-bottom: -72px;
-
-  /* PLACEHOLDER FOR TRANSITION TWEAKING */
-  opacity: 0;
-  animation: fade-in 10s ease-in 2s;
+  animation: fade-in 2s ease-in;
 }
 
 .sentences {
@@ -205,6 +202,10 @@
 
 @keyframes fade-in {
   0% {
+    opacity: 0;
+  }
+
+  10% {
     opacity: 0;
   }
 
