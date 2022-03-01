@@ -144,7 +144,8 @@
   margin-bottom: -72px;
 
   /* PLACEHOLDER FOR TRANSITION TWEAKING */
-  transition: all 0.6s ease-in-out;
+  opacity: 0;
+  animation: fade-in 10s ease-in 2s;
 }
 
 .sentences {
