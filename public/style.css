@@ -184,6 +184,11 @@
   justify-content: flex-start;
 }
 
+/* everything else is reset by inheriting from font color on root element but this is not a font */
+.root--warmer .weatherboxes__box {
+  border-color: var(--warmer-off-white-text);
+}
+
 .weatherboxes__location {
   margin-top: 16px;
   font-size: 24px;
