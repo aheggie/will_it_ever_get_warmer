@@ -1,18 +1,12 @@
+import Sentences from "./Sentences";
+
 const ReturnView = ({ weatherConditions }) => {
   const { suffix, current, sevenDays } = weatherConditions;
   document.getElementById("root").classList.add(`root--${suffix}`);
   return (
     <>
       <p className="oneword">{suffix !== "warmer" ? "No." : "Yes."}</p>
-      <div className="sentences">
-        <p className="sentences__sentence">
-          In seven days' time, it will be just as cold in{" "}
-          <span className="sentences__city">Montreal</span>.
-        </p>
-        <p className="sentences__sentence">
-          Then it will stay cold forever. It will never get warmer again.
-        </p>
-      </div>
+      <Sentences suffix={suffix} />
       <div className="weatherboxes">
         <div className="weatherboxes__box">
           <p className="weatherboxes__location">Montreal, Quebec</p>
