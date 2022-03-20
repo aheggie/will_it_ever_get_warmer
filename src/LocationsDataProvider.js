@@ -8,7 +8,7 @@ const FR_LOCATIONS_URL = //eslint-disable-line no-unused-vars
   "https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/site_list_fr.geojson";
 
 const MTL_GEOCODE =
-  "http://api.openweathermap.org/geo/1.0/zip?zip=H2T,CA&appid=130f654faf949256e51b5b6577a2855b";
+  "https://api.openweathermap.org/geo/1.0/zip?zip=H2T,CA&appid=130f654faf949256e51b5b6577a2855b";
 
 export const LocationsContext = createContext();
 
