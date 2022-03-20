@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { LocationsContext } from "./LocationsDataProvider";
 import MainHeading from "./MainHeading";
 import ReturnView from "./ReturnView";
 import SplashElements from "./SplashElements";
@@ -21,6 +22,8 @@ const randomWeatherConditions = () =>
   ];
 
 const App = () => {
+  const locations = useContext(LocationsContext);
+  console.log(locations);
   const [simpleMockData, setSimpleMockData] = useState({ dataReturned: false });
 
   const currentWeatherConditions = randomWeatherConditions();
