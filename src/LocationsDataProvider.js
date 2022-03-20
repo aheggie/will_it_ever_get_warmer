@@ -14,7 +14,7 @@ export const LocationsContext = createContext();
 
 const LocationsDataProvider = ({ children }) => {
   const [locations, setLocations] = useState({});
-
+  console.log(MTL_GEOCODE);
   useEffect(() => {
     fetch(MTL_GEOCODE)
       .then((res) => res.json())
