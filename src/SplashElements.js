@@ -31,6 +31,7 @@ const SplashElements = () => {
         <button
           disabled={!validatePostalCode(postalCode)}
           className="inputs__btn"
+          // the api only wants the first three chars of postcode
           onClick={() => getWeatherData(postalCode.slice(0, 3))}
           onBlur={() => getWeatherData(postalCode.slice(0, 3))}
         >

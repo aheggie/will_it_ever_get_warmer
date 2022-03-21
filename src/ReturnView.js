@@ -8,7 +8,7 @@ const ReturnView = () => {
 
   const tempDiff = futureHigh - currentHigh;
 
-  const suffix = tempDiff > 4 ? "warmer" : tempDiff > -2 ? "cold" : "colder";
+  const suffix = tempDiff > 3 ? "warmer" : tempDiff > -2 ? "cold" : "colder";
 
   document.getElementById("root").classList.add(`root--${suffix}`);
   return (
