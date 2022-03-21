@@ -5,7 +5,11 @@ import { WeatherAPIContext } from "./WeatherAPIProvider";
 const ReturnView = () => {
   const { weather } = useContext(WeatherAPIContext);
   const { currentHigh, futureHigh } = weather;
-  const suffix = "colder";
+
+  const tempDiff = futureHigh - currentHigh;
+
+  const suffix = tempDiff > 4 ? "warmer" : tempDiff > -2 ? "cold" : "colder";
+
   document.getElementById("root").classList.add(`root--${suffix}`);
   return (
     <>
