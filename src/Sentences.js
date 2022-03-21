@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { WeatherAPIContext } from "./WeatherAPIProvider";
+
 const makeSentences = (city) => ({
   cold: {
     firstSentence: `In seven days' time, it will be just as cold in ${city}.`,
@@ -14,7 +17,8 @@ const makeSentences = (city) => ({
 });
 
 const Sentences = ({ suffix }) => {
-  const { firstSentence, secondSentence } = makeSentences("Montreal")[suffix];
+  const { location } = useContext(WeatherAPIContext);
+  const { firstSentence, secondSentence } = makeSentences(location)[suffix];
 
   return (
     <div className="sentences">

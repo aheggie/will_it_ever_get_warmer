@@ -4,7 +4,7 @@ import { WeatherAPIContext } from "./WeatherAPIProvider";
 const validatePostalCode = (postCode) => postCode.length >= 3;
 
 // this component needs a better name
-const SplashElements = ({ toggleMockDataReturned }) => {
+const SplashElements = () => {
   const [postalCode, setPostalCode] = useState("");
   const { getWeatherData } = useContext(WeatherAPIContext);
   return (
