@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { WeatherAPIContext } from "./WeatherAPIProvider";
 
 const validatePostalCode = (postCode) => postCode.length >= 3;
 
 // this component needs a better name
 const SplashElements = ({ toggleMockDataReturned }) => {
   const [postalCode, setPostalCode] = useState("");
+  const { getWeatherData } = useContext(WeatherAPIContext);
   return (
     <>
       <p className="instructions">
@@ -29,8 +31,8 @@ const SplashElements = ({ toggleMockDataReturned }) => {
         <button
           disabled={!validatePostalCode(postalCode)}
           className="inputs__btn"
-          onClick={toggleMockDataReturned}
-          onBlur={toggleMockDataReturned}
+          onClick={() => getWeatherData(postalCode)}
+          onBlur={() => getWeatherData(postalCode)}
         >
           Search
         </button>

@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 const EN_LOCATIONS_URL = //eslint-disable-line no-unused-vars
   "https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/site_list_en.geojson";
@@ -49,12 +49,10 @@ const WeatherAPIProvider = ({ children }) => {
       });
   };
 
-  useEffect(() => {
-    getWeatherData("M6G");
-  }, []);
-
   return (
-    <WeatherAPIContext.Provider value={{ location, weather, loadingState }}>
+    <WeatherAPIContext.Provider
+      value={{ location, weather, loadingState, getWeatherData }}
+    >
       {children}
     </WeatherAPIContext.Provider>
   );
