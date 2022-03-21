@@ -31,8 +31,8 @@ const SplashElements = () => {
         <button
           disabled={!validatePostalCode(postalCode)}
           className="inputs__btn"
-          onClick={() => getWeatherData(postalCode)}
-          onBlur={() => getWeatherData(postalCode)}
+          onClick={() => getWeatherData(postalCode.slice(0, 3))}
+          onBlur={() => getWeatherData(postalCode.slice(0, 3))}
         >
           Search
         </button>

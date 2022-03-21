@@ -3,7 +3,7 @@ import Sentences from "./Sentences";
 import { WeatherAPIContext } from "./WeatherAPIProvider";
 
 const ReturnView = () => {
-  const { weather } = useContext(WeatherAPIContext);
+  const { weather, location } = useContext(WeatherAPIContext);
   const { currentHigh, futureHigh } = weather;
 
   const tempDiff = futureHigh - currentHigh;
@@ -17,12 +17,12 @@ const ReturnView = () => {
       <Sentences suffix={suffix} />
       <div className="weatherboxes">
         <div className="weatherboxes__box">
-          <p className="weatherboxes__location">Montreal, Quebec</p>
+          <p className="weatherboxes__location">{location}</p>
           <p className="weatherboxes__date">February 26, 2022</p>
           <p className="weatherboxes__temperature">{currentHigh}</p>
         </div>
         <div className="weatherboxes__box">
-          <p className="weatherboxes__location">Montreal, Quebec</p>
+          <p className="weatherboxes__location">{location}</p>
           <p className="weatherboxes__date">March 5, 2022</p>
           <p className="weatherboxes__temperature">{futureHigh}</p>
         </div>
