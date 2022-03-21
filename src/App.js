@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
-import { LocationsContext } from "./LocationsDataProvider";
 import MainHeading from "./MainHeading";
 import ReturnView from "./ReturnView";
 import SplashElements from "./SplashElements";
+import { WeatherAPIContext } from "./WeatherAPIProvider";
 
 const weatherConditions = (suffix, current, sevenDays) => ({
   suffix,
@@ -22,8 +22,8 @@ const randomWeatherConditions = () =>
   ];
 
 const App = () => {
-  const locations = useContext(LocationsContext);
-  console.log(locations);
+  const { location } = useContext(WeatherAPIContext);
+  console.log(location);
   const [simpleMockData, setSimpleMockData] = useState({ dataReturned: false });
 
   const currentWeatherConditions = randomWeatherConditions();

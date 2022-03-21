@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import LocationsDataProvider from "./LocationsDataProvider";
+import WeatherAPIProvider from "./WeatherAPIProvider";
 
 ReactDOM.render(
   <React.StrictMode>
-    <LocationsDataProvider>
+    <WeatherAPIProvider>
       <App />
-    </LocationsDataProvider>
+    </WeatherAPIProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

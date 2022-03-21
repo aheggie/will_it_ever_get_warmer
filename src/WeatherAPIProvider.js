@@ -18,9 +18,9 @@ const canadianGeocode = (canadianPostalCode, apiKey) =>
 const weatherRequest = (latitude, longitude, apiKey) =>
   `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=metric`;
 
-export const LocationsContext = createContext();
+export const WeatherAPIContext = createContext();
 
-const LocationsDataProvider = ({ children }) => {
+const WeatherAPIProvider = ({ children }) => {
   const [location, setLocation] = useState("");
   const [weather, setWeather] = useState({});
   const [loadingState, setLoadingState] = useState("nodata");
@@ -49,10 +49,10 @@ const LocationsDataProvider = ({ children }) => {
   }, [setLocation]);
 
   return (
-    <LocationsContext.Provider value={{ location, weather, loadingState }}>
+    <WeatherAPIContext.Provider value={{ location, weather, loadingState }}>
       {children}
-    </LocationsContext.Provider>
+    </WeatherAPIContext.Provider>
   );
 };
 
-export default LocationsDataProvider;
+export default WeatherAPIProvider;
