@@ -25,9 +25,10 @@ const WeatherAPIProvider = ({ children }) => {
   const [weather, setWeather] = useState({});
   const [loadingState, setLoadingState] = useState("nodata");
   console.log(canadianGeocode("H2T", API_KEY));
-  useEffect(() => {
+
+  const getWeatherData = (postalCode) => {
     setLoadingState("loading");
-    fetch(canadianGeocode("H2T", API_KEY))
+    fetch(canadianGeocode(postalCode, API_KEY))
       .then((res) => res.json())
       .then(({ lat, lon, name }) => {
         setLocation(name);
@@ -46,7 +47,11 @@ const WeatherAPIProvider = ({ children }) => {
         });
         setLoadingState("dataloaded");
       });
-  }, [setLocation]);
+  };
+
+  useEffect(() => {
+    getWeatherData("M6G");
+  }, []);
 
   return (
     <WeatherAPIContext.Provider value={{ location, weather, loadingState }}>
