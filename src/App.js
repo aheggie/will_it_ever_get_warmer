@@ -4,11 +4,11 @@ import ReturnView from "./ReturnView";
 import SplashElements from "./SplashElements";
 import { WeatherAPIContext } from "./WeatherAPIProvider";
 
-const weatherConditions = (suffix, current, sevenDays) => ({
-  suffix,
-  current,
-  sevenDays,
-});
+// const weatherConditions = (suffix, current, sevenDays) => ({
+//   suffix,
+//   current,
+//   sevenDays,
+// });
 
 // const weatherConditionsArray = [
 //   weatherConditions("cold", -7, -6),
@@ -22,15 +22,15 @@ const weatherConditions = (suffix, current, sevenDays) => ({
 //   ];
 
 const App = () => {
-  const { location, loadingState, weather } = useContext(WeatherAPIContext);
+  const { location, loadingState } = useContext(WeatherAPIContext);
   console.log(location);
   // const [simpleMockData, setSimpleMockData] = useState({ dataReturned: false });
 
-  const currentWeatherConditions = weatherConditions(
-    "cold",
-    weather.currentHigh,
-    weather.futureHigh
-  );
+  // const currentWeatherConditions = weatherConditions(
+  //   "cold",
+  //   weather.currentHigh,
+  //   weather.futureHigh
+  // );
   // const toggleMockDataReturned = () =>
   //   setSimpleMockData({
   //     ...simpleMockData,
@@ -48,11 +48,7 @@ const App = () => {
   return (
     <>
       <MainHeading isDataReturned={dataReturned} />
-      {dataReturned ? (
-        <ReturnView weatherConditions={currentWeatherConditions} />
-      ) : (
-        <SplashElements />
-      )}
+      {dataReturned ? <ReturnView /> : <SplashElements />}
     </>
   );
 };

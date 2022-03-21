@@ -40,10 +40,13 @@ const WeatherAPIProvider = ({ children }) => {
           // might want temp max from daily[0]
           // weatherData.current.temp gives immediate current temp
           // daily[0].temp.max gives current day's max temp
-          currentHigh: weatherData.daily[0].temp.max,
+          // both of these are rounded because noone uses fractional temperatures
+          currentHigh: Math.round(weatherData.daily[0].temp.max),
           futureHigh:
             // the last index of weatherData.daily is the furthest day,i.e. seventh
-            weatherData.daily[weatherData.daily.length - 1].temp.max,
+            Math.round(
+              weatherData.daily[weatherData.daily.length - 1].temp.max
+            ),
         });
         setLoadingState("dataloaded");
       });
