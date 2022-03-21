@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 const EN_LOCATIONS_URL = //eslint-disable-line no-unused-vars
   "https://collaboration.cmc.ec.gc.ca/cmc/cmos/public_doc/msc-data/citypage-weather/site_list_en.geojson";
@@ -18,16 +18,17 @@ const canadianGeocode = (canadianPostalCode, apiKey) =>
 const weatherRequest = (latitude, longitude, apiKey) =>
   `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly,alerts&appid=${apiKey}&units=metric`;
 
-export const LocationsContext = createContext();
+export const WeatherAPIContext = createContext();
 
-const LocationsDataProvider = ({ children }) => {
+const WeatherAPIProvider = ({ children }) => {
   const [location, setLocation] = useState("");
   const [weather, setWeather] = useState({});
   const [loadingState, setLoadingState] = useState("nodata");
   console.log(canadianGeocode("H2T", API_KEY));
-  useEffect(() => {
+
+  const getWeatherData = (postalCode) => {
     setLoadingState("loading");
-    fetch(canadianGeocode("H2T", API_KEY))
+    fetch(canadianGeocode(postalCode, API_KEY))
       .then((res) => res.json())
       .then(({ lat, lon, name }) => {
         setLocation(name);
@@ -39,20 +40,25 @@ const LocationsDataProvider = ({ children }) => {
           // might want temp max from daily[0]
           // weatherData.current.temp gives immediate current temp
           // daily[0].temp.max gives current day's max temp
-          currentHigh: weatherData.daily[0].temp.max,
+          // both of these are rounded because noone uses fractional temperatures
+          currentHigh: Math.round(weatherData.daily[0].temp.max),
           futureHigh:
             // the last index of weatherData.daily is the furthest day,i.e. seventh
-            weatherData.daily[weatherData.daily.length - 1].temp.max,
+            Math.round(
+              weatherData.daily[weatherData.daily.length - 1].temp.max
+            ),
         });
         setLoadingState("dataloaded");
       });
-  }, [setLocation]);
+  };
 
   return (
-    <LocationsContext.Provider value={{ location, weather, loadingState }}>
+    <WeatherAPIContext.Provider
+      value={{ location, weather, loadingState, getWeatherData }}
+    >
       {children}
-    </LocationsContext.Provider>
+    </WeatherAPIContext.Provider>
   );
 };
 
-export default LocationsDataProvider;
+export default WeatherAPIProvider;

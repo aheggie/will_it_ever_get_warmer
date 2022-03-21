@@ -1,7 +1,15 @@
+import { useContext } from "react";
 import Sentences from "./Sentences";
+import { WeatherAPIContext } from "./WeatherAPIProvider";
 
-const ReturnView = ({ weatherConditions }) => {
-  const { suffix, current, sevenDays } = weatherConditions;
+const ReturnView = () => {
+  const { weather, location } = useContext(WeatherAPIContext);
+  const { currentHigh, futureHigh } = weather;
+
+  const tempDiff = futureHigh - currentHigh;
+
+  const suffix = tempDiff > 3 ? "warmer" : tempDiff > -2 ? "cold" : "colder";
+
   document.getElementById("root").classList.add(`root--${suffix}`);
   return (
     <>
@@ -9,14 +17,14 @@ const ReturnView = ({ weatherConditions }) => {
       <Sentences suffix={suffix} />
       <div className="weatherboxes">
         <div className="weatherboxes__box">
-          <p className="weatherboxes__location">Montreal, Quebec</p>
+          <p className="weatherboxes__location">{location}</p>
           <p className="weatherboxes__date">February 26, 2022</p>
-          <p className="weatherboxes__temperature">{current}</p>
+          <p className="weatherboxes__temperature">{currentHigh}</p>
         </div>
         <div className="weatherboxes__box">
-          <p className="weatherboxes__location">Montreal, Quebec</p>
+          <p className="weatherboxes__location">{location}</p>
           <p className="weatherboxes__date">March 5, 2022</p>
-          <p className="weatherboxes__temperature">{sevenDays}</p>
+          <p className="weatherboxes__temperature">{futureHigh}</p>
         </div>
       </div>
     </>
