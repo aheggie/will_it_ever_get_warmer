@@ -10,7 +10,8 @@ const SplashElements = () => {
   return (
     <>
       <p className="instructions">
-        Enter your POSTAL CODE to find out the temperature in seven days.
+        Enter your CANADIAN POSTAL CODE to find out the temperature in seven
+        days.
       </p>
       <div className="inputs">
         {/* <input type="text" placeholder="Province" className="inputs__input" />
